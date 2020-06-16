@@ -1,0 +1,71 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TestCapture
+</name>
+</assembly>
+<members>
+<member name="T:TestCapture.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:TestCapture.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:TestCapture.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="F:TestCapture.Form2.KeyBoardAndMouse.MOUSEEVENTF_LEFTDOWN">
+ <summary>
+ Left Click Pressed
+ </summary>
+</member>
+<member name="F:TestCapture.Form2.KeyBoardAndMouse.MOUSEEVENTF_LEFTUP">
+ <summary>
+ Left Click Released
+ </summary>
+</member>
+<member name="F:TestCapture.Form2.KeyBoardAndMouse.MOUSEEVENTF_RIGHTDOWN">
+ <summary>
+ Right Click Pressed
+ </summary>
+</member>
+<member name="F:TestCapture.Form2.KeyBoardAndMouse.MOUSEEVENTF_RIGHTUP">
+ <summary>
+ Right Click Released
+ </summary>
+</member>
+<member name="M:TestCapture.Form2.KeyBoardAndMouse.SendDoubleLeftClick">
+ <summary>
+ This function sends a double left click.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:TestCapture.Form2.KeyBoardAndMouse.SendCustomClick(System.Int32)">
+ <summary>
+ This function depends on the parameter you set. See example for more information.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:TestCapture.Form2.KeyBoardAndMouse.SendRightClick">
+ <summary>
+  This function sends a simple right click.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:TestCapture.Form2.KeyBoardAndMouse.SendAKey(System.Windows.Forms.Keys)">
+ <summary>
+ This function sends a key (like Keys.A). Try it in a text editor !
+ </summary>
+ <param name="k"></param>
+ <returns></returns>
+</member>
+</members>
+</doc>

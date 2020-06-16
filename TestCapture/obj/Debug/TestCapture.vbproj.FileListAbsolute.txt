@@ -1,0 +1,12 @@
+E:\PROJECT VBNET\Monitoring\TestCapture\bin\Debug\TestCapture.exe.config
+E:\PROJECT VBNET\Monitoring\TestCapture\bin\Debug\TestCapture.exe
+E:\PROJECT VBNET\Monitoring\TestCapture\bin\Debug\TestCapture.pdb
+E:\PROJECT VBNET\Monitoring\TestCapture\bin\Debug\TestCapture.xml
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.Resources.resources
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.vbproj.GenerateResource.cache
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.vbproj.CoreCompileInputs.cache
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.exe
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.xml
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.pdb
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.Form2.resources
+E:\PROJECT VBNET\Monitoring\TestCapture\obj\Debug\TestCapture.vbprojAssemblyReference.cache
