@@ -151,7 +151,7 @@ Public Class Form2
         End While
     End Sub
 
-    ''native class I've made to send left and right click with old api (doesn't like the new)
+    ''native class I've made to send left and right click with old api (don't like the new)
 
     Public Class KeyBoardAndMouse
         Private Declare Function keybd_event Lib "user32" Alias "keybd_event" _
