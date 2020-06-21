@@ -14,10 +14,25 @@ Public Class Form2
 
     Public ns As NetworkStream
 
-    <DllImport("user32.dll")>
-    Private Shared Function GetCursorPos(<Out> ByRef lpPoint As Point) As Boolean
+   <DllImport("user32.dll")>
+    Public Shared Function GetCursorPos(<Out> ByRef lpPoint As Point) As Boolean
 
     End Function
+
+
+    <StructLayout(LayoutKind.Sequential)>
+    Structure CURSORINFOHELPER
+        Public cbSize As Int32
+        Public flags As Int32
+        Public hCursor As IntPtr
+        Public ptScreenPos As Point
+    End Structure
+
+    <DllImport("user32.dll")>
+    Public Shared Function GetCursorInfo(ByRef pci As CURSORINFOHELPER) As Boolean
+
+    End Function
+
     Public Function Desk() As Image
         Dim primaryMonitorSize As Size = SystemInformation.PrimaryMonitorSize
         Dim iamage As New Bitmap(primaryMonitorSize.Width, primaryMonitorSize.Height)
@@ -29,12 +44,22 @@ Public Class Form2
 
         ''this code is always the same to get "screenshot" but it doesn't include cursor so I made a way to get it !
 
-        Dim gaz As New Point
+         Dim gaz As New Point
 
-        GetCursorPos(gaz)
+        Dim WB = GetCursorPos(gaz)
+
+
         Dim gh As New Rectangle(gaz.X, gaz.Y, Cursor.Current.Clip.Width, Cursor.Current.Clip.Height)
-        Cursor.Draw(graphics, gh)
 
+        Dim hj As New CURSORINFOHELPER
+
+        hj.cbSize = Marshal.SizeOf(hj)
+        GetCursorInfo(hj)
+
+        If hj.flags = &H1 Then ''SO IMPORTANT TO CHECK IF CURSOR IS NOT HIDDEN ! Else will crash without error message
+            '
+            graphics.DrawIcon(Icon.FromHandle(hj.hCursor), gaz.X, gaz.Y)
+        End If
         '' this adds the cursor on your screenshot image
 
         ''Here 
