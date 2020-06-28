@@ -1,4 +1,6 @@
-﻿Imports System.Net.Sockets
+''This code is provided as example of remote desktop in managed language (here vbnet) for educational purposes of course
+''By Arsium
+Imports System.Net.Sockets
 Imports System.Runtime.InteropServices
 Imports System.Runtime.Serialization.Formatters.Binary
 Imports System.Threading
@@ -14,6 +16,7 @@ Public Class Form2
 
     Public ns As NetworkStream
 
+        ''Start Native Functions for cursor     
    <DllImport("user32.dll")>
     Public Shared Function GetCursorPos(<Out> ByRef lpPoint As Point) As Boolean
 
@@ -32,6 +35,8 @@ Public Class Form2
     Public Shared Function GetCursorInfo(ByRef pci As CURSORINFOHELPER) As Boolean
 
     End Function
+
+''End Native Functions for cursor (get its position on all screen and its bitmap)
 
     Public Function Desk() As Image
         Dim primaryMonitorSize As Size = SystemInformation.PrimaryMonitorSize
@@ -66,19 +71,6 @@ Public Class Form2
         Return iamage
     End Function
 
-    Public Sub Send()
-        Dim bf As New BinaryFormatter
-
-        ns = Cli.GetStream
-
-        bf.Serialize(ns, Desk)
-
-
-        GC.Collect()
-        GC.WaitForPendingFinalizers
-    End Sub
-
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             Cli.Connect("127.0.0.1", 6000)
@@ -87,12 +79,12 @@ Public Class Form2
         End Try
     End Sub
 
-    Public h As New Thread(AddressOf Envoi)
+    Public h As New Thread(AddressOf Send)
 
-    Public Sub Envoi()
+Public Sub Send()
         While True
 
-            '  Send()
+        '  Send() the image
 
             Dim bf As New BinaryFormatter
 
@@ -120,8 +112,9 @@ Public Class Form2
         Task.Run(Sub() RDV2(Cli.GetStream))  ''task to capture commands sent (left click and right click)
     End Sub
 
+    
     Public Sub RDV2(ByVal Herlper As NetworkStream)
-
+        ''This method helps to run click in parallel using task library
         While True
 
             Dim Buffer(4096) As Byte
@@ -144,8 +137,6 @@ Public Class Form2
                 KeyBoardAndMouse.SendRightClick()
 
             End If
-
-
 
 
         End While
