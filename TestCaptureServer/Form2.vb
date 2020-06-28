@@ -1,4 +1,5 @@
-﻿
+''This code is provided as example of remote desktop in managed language (here vbnet) for educational purposes of course
+''By Arsium
 Imports System.Net
 Imports System.Net.Sockets
 Imports System.Runtime.Serialization.Formatters.Binary
